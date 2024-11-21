@@ -1,0 +1,109 @@
+/* Estilos existentes */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    background: url('assets/fondo-restaurante.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#menu-container {
+    width: 1000px;
+    height: 600px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.flipbook {
+    width: 1000px;
+    height: 600px;
+}
+
+.page {
+    background: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ddd;
+}
+
+.page h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.page ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.page ul li {
+    font-size: 18px;
+    color: #555;
+    margin: 5px 0;
+}
+
+.hard {
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 36px;
+    padding: 20px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Nuevos estilos para el overlay interactivo */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Imagen interactiva */
+#drag-indicator {
+    width: 120px;
+    height: auto;
+    animation: bounce 1.5s infinite;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Animación de entrada del overlay */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

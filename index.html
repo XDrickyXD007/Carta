@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Restaurante</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/turn.min.js"></script>
+</head>
+<body>
+    <!-- Overlay interactivo -->
+    <div id="overlay">
+        <img src="assets/arrastrar-dedo.png" alt="Arrastra para pasar" id="drag-indicator">
+    </div>
+
+    <div id="menu-container">
+        <div id="menu" class="flipbook">
+            <div class="hard" style="background-image: url('assets/portada.jpg');">
+                <h1></h1>
+            </div>
+            <div class="page" style="background-image: url('assets/entradas.jpg');">
+                <h2>Entradas Frías</h2>
+                <ul>
+                    <li>Ensaladilla rusa</li>
+                    <li>Ensaladilla de mariscos</li>
+                    <li>Gilda</li>
+                </ul>
+            </div>
+            <div class="page" style="background-image: url('assets/entradas.jpg');">
+                <h2>Entradas Calientes</h2>
+                <ul>
+                    <li>Patatas Bravas</li>
+                    <li>Rabo de cerdo</li>
+                    <li>Solomillo Ibérico</li>
+                </ul>
+            </div>
+            <div class="page" style="background-image: url('assets/vinos.jpg');">
+                <h2>Vinos</h2>
+                <ul>
+                    <li>Pago de los Capellanes</li>
+                    <li>Bosque de Matasnos</li>
+                </ul>
+            </div>
+            <div class="hard">
+                <h1>Gracias por visitarnos</h1>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Configuración del flipbook
+            $("#menu").turn({
+                width: 1000,
+                height: 600,
+                autoCenter: true,
+                gradients: true,
+                elevation: 50,
+                display: 'double',
+                duration: 1000
+            });
+
+            // Ocultar el overlay al interactuar
+            $("#menu").on("start", function() {
+                $("#overlay").fadeOut();
+            });
+
+            // Ocultar automáticamente el overlay después de 5 segundos
+            setTimeout(function() {
+                $("#overlay").fadeOut();
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
